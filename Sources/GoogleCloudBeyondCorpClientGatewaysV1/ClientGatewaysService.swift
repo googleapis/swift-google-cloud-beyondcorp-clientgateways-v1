@@ -57,7 +57,7 @@ public class ClientGatewaysServiceClient: Clients.ClientGatewaysServiceProtocol 
   /// @Snippet(path: "ClientGatewaysService_ListClientGateways")
   public func listClientGateways(
     request: ListClientGatewaysRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ListClientGatewaysResponse {
+  ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ListClientGatewaysResponse {
     try await self.inner.listClientGateways(request: request, options: options)
   }
 
@@ -69,7 +69,7 @@ public class ClientGatewaysServiceClient: Clients.ClientGatewaysServiceProtocol 
   ) throws -> any AsyncSequence<ClientGateway, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudBeyondcorpClientgatewaysV1.ListClientGatewaysResponse in
+        -> GoogleCloudBeyondCorpClientGatewaysV1.ListClientGatewaysResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listClientGateways(request: request, options: options)
@@ -82,7 +82,7 @@ public class ClientGatewaysServiceClient: Clients.ClientGatewaysServiceProtocol 
   /// @Snippet(path: "ClientGatewaysService_GetClientGateway")
   public func getClientGateway(
     request: GetClientGatewayRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ClientGateway {
+  ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ClientGateway {
     try await self.inner.getClientGateway(request: request, options: options)
   }
 
@@ -346,7 +346,7 @@ extension Clients {
   public protocol ClientGatewaysServiceProtocol {
     /// See `ClientGatewaysServiceClient.listClientGateways`.
     func listClientGateways(request: ListClientGatewaysRequest) async throws
-      -> GoogleCloudBeyondcorpClientgatewaysV1.ListClientGatewaysResponse
+      -> GoogleCloudBeyondCorpClientGatewaysV1.ListClientGatewaysResponse
 
     /// See `ClientGatewaysServiceClient.listClientGateways`.
     func listClientGateways(
@@ -360,12 +360,12 @@ extension Clients {
 
     /// See `ClientGatewaysServiceClient.getClientGateway`.
     func getClientGateway(request: GetClientGatewayRequest) async throws
-      -> GoogleCloudBeyondcorpClientgatewaysV1.ClientGateway
+      -> GoogleCloudBeyondCorpClientGatewaysV1.ClientGateway
 
     /// See `ClientGatewaysServiceClient.getClientGateway`.
     func getClientGateway(
       name: Swift.String,
-    ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ClientGateway
+    ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ClientGateway
 
     /// See `ClientGatewaysServiceClient.createClientGateway`.
     func createClientGateway(request: CreateClientGatewayRequest) async throws
@@ -452,7 +452,7 @@ extension Clients {
     /// See `ClientGatewaysServiceClient.listClientGateways`.
     func listClientGateways(
       request: ListClientGatewaysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ListClientGatewaysResponse
+    ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ListClientGatewaysResponse
 
     /// See `ClientGatewaysServiceClient.listClientGateways`.
     func listClientGateways(
@@ -462,7 +462,7 @@ extension Clients {
     /// See `ClientGatewaysServiceClient.getClientGateway`.
     func getClientGateway(
       request: GetClientGatewayRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ClientGateway
+    ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ClientGateway
 
     /// See `ClientGatewaysServiceClient.createClientGateway`.
     func createClientGateway(
@@ -539,14 +539,14 @@ extension Clients {
 // Default implementations
 extension Clients.ClientGatewaysServiceProtocol {
   public func listClientGateways(request: ListClientGatewaysRequest) async throws
-    -> GoogleCloudBeyondcorpClientgatewaysV1.ListClientGatewaysResponse
+    -> GoogleCloudBeyondCorpClientGatewaysV1.ListClientGatewaysResponse
   {
     try await self.listClientGateways(request: request, options: .init())
   }
 
   public func listClientGateways(
     request: ListClientGatewaysRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ListClientGatewaysResponse {
+  ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ListClientGatewaysResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -561,7 +561,7 @@ extension Clients.ClientGatewaysServiceProtocol {
   ) throws -> any AsyncSequence<ClientGateway, Swift.Error> {
     let listRpc = {
       (token: Swift.String) async throws
-        -> GoogleCloudBeyondcorpClientgatewaysV1.ListClientGatewaysResponse in
+        -> GoogleCloudBeyondCorpClientGatewaysV1.ListClientGatewaysResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -577,20 +577,20 @@ extension Clients.ClientGatewaysServiceProtocol {
   }
 
   public func getClientGateway(request: GetClientGatewayRequest) async throws
-    -> GoogleCloudBeyondcorpClientgatewaysV1.ClientGateway
+    -> GoogleCloudBeyondCorpClientGatewaysV1.ClientGateway
   {
     try await self.getClientGateway(request: request, options: .init())
   }
 
   public func getClientGateway(
     request: GetClientGatewayRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ClientGateway {
+  ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ClientGateway {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func getClientGateway(
     name: Swift.String,
-  ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ClientGateway {
+  ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ClientGateway {
     let request = GetClientGatewayRequest().with {
       $0.name = name
     }

@@ -29,11 +29,11 @@ extension Clients {
   protocol ClientGatewaysServiceStub {
     func listClientGateways(
       request: ListClientGatewaysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ListClientGatewaysResponse
+    ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ListClientGatewaysResponse
 
     func getClientGateway(
       request: GetClientGatewayRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ClientGateway
+    ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ClientGateway
 
     func createClientGateway(
       request: CreateClientGatewayRequest, options: GoogleCloudGax.RequestOptions
@@ -90,7 +90,7 @@ extension Clients {
 
     public func listClientGateways(
       request: ListClientGatewaysRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ListClientGatewaysResponse {
+    ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ListClientGatewaysResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -110,12 +110,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBeyondcorpClientgatewaysV1.ListClientGatewaysResponse.self, from: data)
+        GoogleCloudBeyondCorpClientGatewaysV1.ListClientGatewaysResponse.self, from: data)
     }
 
     public func getClientGateway(
       request: GetClientGatewayRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudBeyondcorpClientgatewaysV1.ClientGateway {
+    ) async throws -> GoogleCloudBeyondCorpClientGatewaysV1.ClientGateway {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -130,7 +130,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudBeyondcorpClientgatewaysV1.ClientGateway.self, from: data)
+        GoogleCloudBeyondCorpClientGatewaysV1.ClientGateway.self, from: data)
     }
 
     public func createClientGateway(
